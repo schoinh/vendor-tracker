@@ -9,6 +9,7 @@ namespace VendorOrderTracker.Models
         public string Description { get; set; }
         public List<Order> Orders { get; set; }
         public int Id { get; set; }
+        public static Vendor FoundVendor { get; set; }
         private static List<Vendor> _instances = new List<Vendor> {};
         private static int _idCount = 1;
 
@@ -25,6 +26,22 @@ namespace VendorOrderTracker.Models
         public static List<Vendor> GetAll()
         {
             return _instances;
+        }
+
+        public static void Find(int uniqueId)
+        {
+            for (int i = 0; i < _instances.Count; i++)
+            {
+                if (_instances[i].Id == uniqueId)
+                {
+                    FoundVendor = _instances[i];
+                }
+            }
+        }
+
+        public void AddOrder(Order newOrder)
+        {
+            Orders.Add(newOrder);
         }
 
         public static void DeleteAll()

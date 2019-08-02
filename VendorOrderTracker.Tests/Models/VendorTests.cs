@@ -42,5 +42,16 @@ namespace VendorOrderTracker.Tests
 
             Assert.AreEqual("Breakfast chain", vendorList[1].Description);
         }
+
+        [TestMethod]
+        public void Find_FindsVendorById_FoundVendor()
+        {
+            Vendor newVendor1 = new Vendor("5 Stones Coffee", "Coffee place in downtown Redmond");
+            Vendor newVendor2 = new Vendor("Waffle House", "Breakfast chain");
+
+            Vendor.Find(2);
+
+            Assert.AreEqual("Waffle House", Vendor.FoundVendor.Name);
+        }
     }
 }
