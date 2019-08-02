@@ -4,11 +4,10 @@
 
 @using VendorOrderTracker.Models;
 
-<h1>@Model["vendor"].Name</h1>
+<h1>@Model["vendor"].Name<br><span class="vendor-desc">@Model["vendor"].Description</span></h1>
+<a href='/vendors/@Model["vendor"].Id/edit'>↯ Edit Vendor</a>
+<hr>
 
-<h5>@Model["vendor"].Description</h5>
-
-<p><a href='/vendors/@Model["vendor"].Id/edit'>↯ Edit Vendor</a></p>
 <p><a href='/vendors/@Model["vendor"].Id/orders/new'>★ New Order</a></p>
 
 @if (@Model["orders"].Count == 0)
@@ -26,4 +25,5 @@
     }
 </ul>
 
+<hr>
 <a href='/vendors'>← Back to My Vendors</a>
