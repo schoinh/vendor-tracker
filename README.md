@@ -6,12 +6,16 @@
 
 ## Description
 
-DETAILED DESCRIPTION
+Pierre can now view and manage his vendors online. This Web site allows for adding new vendors, adding new orders for a given vendor, viewing vendor details and their orders, and editing vendor details. It does not allow for deleting of any vendors or orders. MSTest was used to test the business logic for the Vendors class.
 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **BEHAVIOR** | INPUT | OUTPUT |
+| **Displays list of vendors, if any** | Click "My Vendors" | List of vendors, if any |
+| **Allows user to add new vendors** | Click "New Vendor" | Blank form for submitting new vendor details |
+| **Allows user to edit vendor details** | Click "Edit Vendor" | Blank form for submitting changes in vendor details |
+| **Allows user to add new orders for a vendor** | Click "New Order" | Blank form for submitting information about new order |
+| **Displays list or orders for each vendor, if any** | Click a vendor from My Vendors | List of orders, if any |
 
 ## Setup/Installation Requirements
 
@@ -19,8 +23,11 @@ DETAILED DESCRIPTION
     ```
     $ git clone https://github.com/schoinh/vendor-tracker.git
     ```
-2. Run the application
+2. Navigate to the production folder (VendorOrderTracker.Solution/VendorOrderTracker)
+
+3. Restore dependencies and run the application
     ```
+    $ dotnet restore
     $ dotnet run
     ```
 
@@ -30,6 +37,7 @@ DETAILED DESCRIPTION
 ## Technologies Used
 * C#
 * ASP.NET Core MVC
+* MSTest
 
 ## Support and contact details
 
