@@ -3,12 +3,16 @@
 }
 
 <h1>Edit Vendor Information</h1>
+<p>
+    Current Name: @Model.Name<br>
+    Current Description: @Model.Description
+</p>
 
 <form action= "/vendors/@Model.Id" method= "post">
-    <label for="name">Name</label>
-    <input name="name" type="text" placeholder="@Model.Name"><br>
-    <label for="description">Description</label>
-    <input name="description" type="text" placeholder="@Model.Description"><br>
+    <label for="name">New Name</label>
+    <input name="name" type="text" required><br>
+    <label for="description">New Description</label>
+    <input name="description" type="text" required><br>
     <p><button type="submit" name="button">Submit Changes</button><p>
 </form>
 
