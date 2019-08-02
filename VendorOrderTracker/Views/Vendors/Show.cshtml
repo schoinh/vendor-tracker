@@ -8,6 +8,9 @@
 
 <h5>@Model["vendor"].Description</h5>
 
+<p><a href='/vendors/@Model["vendor"].Id/edit'>↯ Edit Vendor</a></p>
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>★ New Order</a></p>
+
 @if (@Model["orders"].Count == 0)
 {
     <p>No orders yet!</p>
@@ -16,9 +19,12 @@
 <ul>
     @foreach (Order order in Model["orders"])
     {
-        <li>@order.Title</li>
+        <li>@order.Title<br>
+        Description: @order.Description<br>
+        Date Placed: @order.Date<br>
+        Price: $@order.Price<br>
+        Paid? @order.Paid</li>
     }
 </ul>
 
-<a href='/vendors/@Model["vendor"].Id/orders/new'>New Order</a>
-<a href='/vendors'>Back to My Vendors</a>
+<a href='/vendors'>← Back to My Vendors</a>
