@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace VendorOrderTracker.Models
@@ -39,11 +38,6 @@ namespace VendorOrderTracker.Models
                     FoundOrder = _instances[i];
                 }
             }
-        }
-
-        public static void ResetIdCount()
-        {
-            _idCount = 1;
         }
     }
 }

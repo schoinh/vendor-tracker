@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace VendorOrderTracker.Models
@@ -10,14 +9,14 @@ namespace VendorOrderTracker.Models
         public List<Order> Orders { get; set; }
         public int Id { get; }
         public static Vendor FoundVendor { get; set; }
-        private static List<Vendor> _instances = new List<Vendor> {};
+        private static List<Vendor> _instances = new List<Vendor> { };
         private static int _idCount = 1;
 
         public Vendor(string name, string description)
         {
             Name = name;
             Description = description;
-            Orders = new List<Order> {};
+            Orders = new List<Order> { };
             Id = _idCount;
             _instances.Add(this);
             _idCount++;
