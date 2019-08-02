@@ -26,7 +26,7 @@ namespace VendorOrderTracker.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet("/vendors/{vendorid}")]
+        [HttpGet("/vendors/{vendorId}")]
         public ActionResult Show(int vendorId)
         {
             Vendor.Find(vendorId);
@@ -36,6 +36,24 @@ namespace VendorOrderTracker.Controllers
             model.Add("orders", Vendor.FoundVendor.Orders);
 
             return View(model);
+        }
+
+        [HttpPost("/vendors/{vendorId}")]
+        public ActionResult Update(int vendorId, string name, string description)
+        {
+            Vendor.Find(vendorId);
+
+            Vendor.FoundVendor.Name = name;
+            Vendor.FoundVendor.Description = description;
+
+            return RedirectToAction("Show");
+        }
+
+        [HttpGet("/vendors/{vendorId}/edit")]
+        public ActionResult Edit(int vendorId)
+        {
+            Vendor.Find(vendorId);
+            return View(Vendor.FoundVendor);
         }
 
         [HttpPost("/vendors/{vendorId}/orders")]
@@ -51,12 +69,5 @@ namespace VendorOrderTracker.Controllers
 
             return View("Show", model);
         }
-
-        // [HttpPost("/vendors/delete")]
-        // public ActionResult DeleteAll()
-        // {
-        //     // Vendor.ClearAll();
-        //     return View();
-        // }
     }
 }
