@@ -3,14 +3,18 @@
 }
 
 <h1>Add a New Vendor</h1>
+<hr>
 
 <form action= "/vendors" method= "post">
-    <label for="name">Name</label>
-    <input name="name" type="text" required><br>
-    <label for="description">Description</label>
-    <input name="description" type="text" required><br>
-    <p><button type="submit" name="button">Add</button><p>
+    <div class="form-group">
+        <label for="name">Name </label>
+        <input name="name" type="text" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description </label>
+        <input name="description" type="text" class="form-control" required>
+    </div>
+    <p><button type="submit" name="button" class="btn btn-primary">Add</button><p>
 </form>
 
-<p><a href="/vendors">Cancel</a></p>
-
+<a href="/vendors">Cancel</a>

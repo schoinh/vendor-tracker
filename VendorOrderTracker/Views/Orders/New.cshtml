@@ -3,17 +3,26 @@
 }
 
 <h1>New Order for @Model.Name</h1>
+<hr>
 <form action="/vendors/@Model.Id/orders" method="post">
     <input name="vendorId" type="hidden" value="@Model.Id">
-    <label for="title">Title</label>
-    <input name="title" type="text" required><br>
-    <label for="description">Description</label>
-    <input name="description" type="text"><br>
-    <label for="price">Price</label>
-    <input name="price" type="number" required><br>
-    <label for="date">Date</label>
-    <input name="date" type="text"><br>
-    <button type="submit">Add Item</button>
-</form>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input name="title" type="text" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input name="description" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="price">Price ($)</label>
+        <input name="price" type="number" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input name="date" type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Order</button>
+</form><br>
 
-<p><a href='/vendors/@Model.Id'>Cancel</a></p>
+<a href='/vendors/@Model.Id'>Cancel</a>
