@@ -1,6 +1,6 @@
-# APP NAME
+# Vendor and Order Tracker
 
-#### _DESCRIPTION - BUILD DATE_
+#### _Web application for tracking vendors that purchase goods from Pierre's Bakery and the orders belonging to the vendors - August 2, 2019_
 
 #### _By **Na Hyung Choi**_
 
@@ -17,7 +17,7 @@ DETAILED DESCRIPTION
 
 1. Clone this repository:
     ```
-    $ git clone REPO URL HERE
+    $ git clone https://github.com/schoinh/vendor-tracker.git
     ```
 2. Run the application
     ```
@@ -28,7 +28,8 @@ DETAILED DESCRIPTION
 * No known bugs at this time.
 
 ## Technologies Used
-* C# / .NET
+* C#
+* ASP.NET Core MVC
 
 ## Support and contact details
 

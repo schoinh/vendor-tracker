@@ -1,38 +1,38 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using VendorOrderTracker.Models;
 using System.Collections.Generic;
 
-namespace ProjectName.Controllers
+namespace VendorOrderTracker.Controllers
 {
-    public class PluralClassNameController : Controller
+    public class OrdersController : Controller
     {
-        // [HttpGet("/pluralClassName")]
+        // [HttpGet("/orders")]
         // public ActionResult Index()
         // {
         //     // List<Item> allItems = Item.GetAll();
         //     // return View(allItems);
         // }
 
-        // [HttpGet("/pluralClassName/new")]
+        // [HttpGet("/orders/new")]
         // public ActionResult New()
         // {
         //     return View();
         // }
 
-        // [HttpPost("/pluralClassName")]
+        // [HttpPost("/orders")]
         // public ActionResult Create(string description)
         // {
         //     // Item myItem = new Item(description);
         //     return RedirectToAction("Index");
         // }
 
-        // [HttpPost("/pluralClassName/delete")]
+        // [HttpPost("/orders/delete")]
         // public ActionResult DeleteAll()
         // {
         //     // Item.ClearAll();
         //     return View();
         // }
-        // [HttpGet("/pluralClassName/{id}")]
+        // [HttpGet("/orders/{id}")]
         // public ActionResult Show(int id)
         // {
         //     // Item foundItem = Item.Find(id);
