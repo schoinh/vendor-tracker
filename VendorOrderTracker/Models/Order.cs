@@ -9,21 +9,17 @@ namespace VendorOrderTracker.Models
         public string Description { get; set; }
         public int Price { get; set; }
         public string Date { get; set; }
-        public bool Paid { get; set; }
-        public bool Delivered { get; set; }
         public int Id { get; }
         public static Order FoundOrder { get; set; }
-        private static List<Order> _instances = new List<Order> {};
+        private static List<Order> _instances = new List<Order> { };
         private static int _idCount = 1;
 
-        public Order(string title, string description, int price, string date, bool paid)
+        public Order(string title, string description, int price, string date)
         {
             Title = title;
             Description = description;
             Price = price;
             Date = date;
-            Paid = paid;
-            Delivered = false;
             Id = _idCount;
             _instances.Add(this);
             _idCount++;
