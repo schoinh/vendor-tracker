@@ -1,0 +1,23 @@
+@{
+    Layout = "_Layout";
+}
+
+@using VendorOrderTracker.Models;
+
+<h1>@Model.Name</h1>
+
+<h5>@Model.Description</h5>
+
+@if (@Model.Orders.Count == 0)
+{
+    <p>No orders yet!</p>
+}
+
+<ul>
+@foreach (Order order in Model.Orders)
+{
+    <li><a href='/vendors/@Model.Id/orders/@order.Id'>@order.Title</a></li>
+}
+</ul>
+
+<a href="/venders/@Model.Id/orders/new">New Order</a>
