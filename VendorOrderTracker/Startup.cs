@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ProjectName
+namespace VendorOrderTracker
 {
     public class Startup
     {
@@ -33,9 +33,9 @@ namespace ProjectName
             
             app.UseStaticFiles();
             
-            app.Run(async (context) =>
+            app.Run(async(context) =>
             {
-                await context.Response.WriteAsync("something went wrong!");
+                await context.Response.WriteAsync("MVC Error");
             });
         }
     }
