@@ -8,7 +8,7 @@ namespace VendorOrderTracker.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public List<Order> Orders { get; set; }
-        public int Id { get; set; }
+        public int Id { get; }
         public static Vendor FoundVendor { get; set; }
         private static List<Vendor> _instances = new List<Vendor> {};
         private static int _idCount = 1;
@@ -44,12 +44,12 @@ namespace VendorOrderTracker.Models
             Orders.Add(newOrder);
         }
 
-        public static void DeleteAll()
+        public static void DeleteAll()  // For testing
         {
             _instances.Clear();
         }
 
-        public static void ResetIdCount()
+        public static void ResetIdCount()   // For testing
         {
             _idCount = 1;
         }
