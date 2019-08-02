@@ -22,14 +22,19 @@ namespace VendorOrderTracker.Models
             _idCount++;
         }
 
-        public static void ResetIdCount()
-        {
-            _idCount = 1;
-        }
-
         public static List<Vendor> GetAll()
         {
             return _instances;
+        }
+
+        public static void DeleteAll()
+        {
+            _instances.Clear();
+        }
+
+        public static void ResetIdCount()
+        {
+            _idCount = 1;
         }
     }
 }

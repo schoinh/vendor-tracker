@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VendorOrderTracker.Models;
 using System;
+using System.Collections.Generic;
 
 namespace VendorOrderTracker.Tests
 {
@@ -10,6 +11,7 @@ namespace VendorOrderTracker.Tests
         public void Dispose()
         {
             Vendor.ResetIdCount();
+            Vendor.DeleteAll();
         }
 
         [TestMethod]
@@ -30,14 +32,15 @@ namespace VendorOrderTracker.Tests
             Assert.AreEqual(2, newVendor2.Id);
         }
 
-        // [TestMethod]
-        // public void VendorConstructor_CreatesUniqueId_Int()
-        // {
-        //     Vendor newVendor1 = new Vendor("5 Stones Coffee", "Coffee place in downtown Redmond");
-        //     Vendor newVendor2 = new Vendor("Waffle House", "Breakfast chain");
+        [TestMethod]
+        public void GetAll_RetrievesAllVendors_ListOfVendors()
+        {
+            Vendor newVendor1 = new Vendor("5 Stones Coffee", "Coffee place in downtown Redmond");
+            Vendor newVendor2 = new Vendor("Waffle House", "Breakfast chain");
 
-        //     Assert.AreEqual(1, newVendor1.Id);
-        //     Assert.AreEqual(2, newVendor2.Id);
-        // }
+            List<Vendor> vendorList = Vendor.GetAll();
+
+            Assert.AreEqual("Breakfast chain", vendorList[1].Description);
+        }
     }
 }
