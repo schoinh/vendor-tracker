@@ -6,8 +6,15 @@ namespace VendorOrderTracker.Controllers
 {
     public class OrdersController : Controller
     {
-        // [HttpGet("/orders")]
-        // public ActionResult Index()
+        [HttpGet("/vendors/{vendorId}/orders/new")]
+        public ActionResult New(int vendorId)
+        {
+            Vendor.Find(vendorId);
+            return View(Vendor.FoundVendor);
+        }
+
+        // [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+        // public ActionResult Show()
         // {
         //     // List<Item> allItems = Item.GetAll();
         //     // return View(allItems);

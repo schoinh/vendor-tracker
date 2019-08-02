@@ -26,11 +26,30 @@ namespace VendorOrderTracker.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet("/vendors/{id}")]
-        public ActionResult Show(int id)
+        [HttpGet("/vendors/{vendorid}")]
+        public ActionResult Show(int vendorId)
         {
-            Vendor.Find(id);
-            return View(Vendor.FoundVendor);
+            Vendor.Find(vendorId);
+
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            model.Add("vendor", Vendor.FoundVendor);
+            model.Add("orders", Vendor.FoundVendor.Orders);
+
+            return View(model);
+        }
+
+        [HttpPost("/vendors/{vendorId}/orders")]
+        public ActionResult Create(int vendorId, string title, string description, int price, string date, bool paid)
+        {
+            Vendor.Find(vendorId);
+            Order newOrder = new Order(title, description, price, date, paid);
+            Vendor.FoundVendor.AddOrder(newOrder);
+
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            model.Add("vendor", Vendor.FoundVendor);
+            model.Add("orders", Vendor.FoundVendor.Orders);
+
+            return View("Show", model);
         }
 
         // [HttpPost("/vendors/delete")]
