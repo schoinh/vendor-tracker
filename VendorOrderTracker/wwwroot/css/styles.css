@@ -1,0 +1,16 @@
+.centered {
+    text-align: center;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+h1, h3 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.vendor-desc {
+    font-size: 0.5em;
+}
