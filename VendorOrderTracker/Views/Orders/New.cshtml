@@ -6,15 +6,15 @@
 <form action="/vendors/@Model.Id/orders" method="post">
     <input name="vendorId" type="hidden" value="@Model.Id">
     <label for="title">Title</label>
-    <input name="title" type="text">
+    <input name="title" type="text"><br>
     <label for="description">Description</label>
-    <input name="description" type="text">
+    <input name="description" type="text"><br>
     <label for="price">Price</label>
-    <input name="price" type="number">
+    <input name="price" type="number"><br>
     <label for="date">Date</label>
-    <input name="date" type="text">
+    <input name="date" type="text"><br>
     <label for="paid">Paid?</label>
-    <input name="paid" type="text">
+    <input name="paid" type="text"><br>
     <!-- <div class="radio">
         <label>
             <input type="radio" name="paid" value="true">
@@ -31,3 +31,5 @@
     <input name="paid" type="bool"> -->
     <button type="submit">Add Item</button>
 </form>
+
+<p><a href='/vendors/@Model.Id'>Cancel</a></p>
