@@ -1,0 +1,33 @@
+@{
+    Layout = "_Layout";
+}
+
+<h1>New Order for @Model.Name</h1>
+<form action="/vendors/@Model.Id/orders" method="post">
+    <input name="vendorId" type="hidden" value="@Model.Id">
+    <label for="title">Title</label>
+    <input name="title" type="text">
+    <label for="description">Description</label>
+    <input name="description" type="text">
+    <label for="price">Price</label>
+    <input name="price" type="number">
+    <label for="date">Date</label>
+    <input name="date" type="text">
+    <label for="paid">Paid?</label>
+    <input name="paid" type="text">
+    <!-- <div class="radio">
+        <label>
+            <input type="radio" name="paid" value="true">
+            Paid
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="paid" value="false" checked>
+            Not Paid
+        </label>
+    </div> -->
+    <!-- <label for="paid">Paid? (Y/N)</label>
+    <input name="paid" type="bool"> -->
+    <button type="submit">Add Item</button>
+</form>
